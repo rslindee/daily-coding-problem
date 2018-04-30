@@ -4,7 +4,6 @@ For example, the input [3, 4, -1, 1] should give 2. The input [1, 2, 0] should g
 
 You can modify the input array in-place.
 
-TODO: Improve time
 """
 
 
@@ -23,6 +22,16 @@ def find_missing(nums):
     # We never found a missing value, so it must be the next highest
     return len(nums)+1
 
-assert find_missing([3, 4, -1, 1]) == 2
-assert find_missing([1, 2, 0]) == 3
+def find_missing_fast(nums):
+    # reduce to set
+    nums = set(nums)
+    length = range(len(nums))
+    # check if it exists in set
+    for i in range(len(nums)):
+        if (i+1) not in nums:
+            return (i+1)
+    return length+1
+
+assert find_missing_fast([3, 4, -1, 1]) == 2
+assert find_missing_fast([1, 2, 0]) == 3
 print ('Tests passed!')

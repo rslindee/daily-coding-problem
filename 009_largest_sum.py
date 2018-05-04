@@ -7,21 +7,18 @@ Follow-up: Can you do this in O(N) time and constant space?
 """
 
 def largest_sum(nums):
-    big = None
-    bigger = None
-    biggest = None
+    big = []
+    bigger = []
+    biggest = []
     for idx, val in enumerate(nums):
-        if (biggest == None or val > biggest[0]):
-            if (bigger != None):
-                big = list(bigger)
-            if (biggest != None):
-                bigger = list(biggest)
+        if not biggest or val > biggest[0]:
+            big = list(bigger)
+            bigger = list(biggest)
             biggest = [val, idx]
-        elif (bigger == None or val > bigger[0]):
-            if (bigger != None):
-                big = list(bigger)
+        elif not bigger or val > bigger[0]:
+            big = list(bigger)
             bigger = [val, idx]
-        elif (big == None or val > big[0]):
+        elif not big or val > big[0]:
             big = [val, idx]
     if (abs(biggest[1] - bigger[1]) != 1):
         return biggest[0] + bigger[0]

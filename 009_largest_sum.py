@@ -20,10 +20,14 @@ def largest_sum(nums):
             bigger = [val, idx]
         elif not big or val > big[0]:
             big = [val, idx]
-    if (abs(biggest[1] - bigger[1]) != 1):
+    if (abs(biggest[1] - bigger[1]) > 1):
         return biggest[0] + bigger[0]
     else:
-        return biggest[0] + big[0]
+        if (abs(bigger[1] - big[1]) > 1):
+            return bigger[0] + big[0]
+        else:
+            return biggest[0] + big[0]
+
 
 
 assert largest_sum([2, 4, 6, 8]) == 12

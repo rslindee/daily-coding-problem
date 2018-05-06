@@ -14,7 +14,7 @@ def number_ways_decoded(message):
     count = 0
     for i in mapping:
         if message.startswith(i):
-            # Recursively count reset of message permutations
+            # Recursively count rest of message permutations
             count += number_ways_decoded(message[len(i):])
     return count
 

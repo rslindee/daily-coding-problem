@@ -3,6 +3,7 @@
 #include <unistd.h>
 
 // Implement a job scheduler which takes in a function f and an integer n, and calls f after n milliseconds.
+// Build with: gcc 010_job_scheduler.c -o job_scheduler -lpthread
 
 struct job_sched_args {
     int n;

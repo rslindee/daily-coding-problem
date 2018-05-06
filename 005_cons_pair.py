@@ -9,6 +9,8 @@ def cons(a, b):
         return f(a, b)
     return pair
 Implement car and cdr.
+
+TODO: Finish
 """
 
 def cons(a, b):
@@ -22,4 +24,3 @@ def cdr(pair):
 
 assert car(cons(3, 4)) == 3
 assert cdr(cons(3, 4)) == 4
-print ('Tests passed!')

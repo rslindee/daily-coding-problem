@@ -34,4 +34,3 @@ def find_missing_fast(nums):
 
 assert find_missing_fast([3, 4, -1, 1]) == 2
 assert find_missing_fast([1, 2, 0]) == 3
-print ('Tests passed!')

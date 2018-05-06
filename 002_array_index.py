@@ -3,6 +3,8 @@ For example, if our input was [1, 2, 3, 4, 5], the expected output would be [120
 Follow-up: what if you can't use division?
 """
 
+# Needed only for python 3
+from functools import reduce
 
 def modify_array(vals):
     modified_list = []
@@ -20,5 +22,6 @@ def modify_array_no_div(vals):
         modified_list.append(reduce(lambda x, y: x * y, vals) / val)
     return modified_list
 
-my_vals = [1, 2, 3, 4, 5]
-print modify_array_no_div(my_vals)
+assert modify_array_no_div([1, 2, 3, 4, 5]) == [120, 60, 40, 30, 24]
+assert modify_array_no_div([3, 2, 1]) == [2, 3, 6]
+

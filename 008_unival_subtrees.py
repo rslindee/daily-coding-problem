@@ -12,7 +12,6 @@ For example, the following tree has 5 unival subtrees:
   / \
  1   1
 
-TODO: Finish
 """
 
 
@@ -25,7 +24,7 @@ class Node:
     def is_leaf(self):
         if self.left is None and self.right is None:
             return True
-        else
+        else:
             return False
 
     def is_unival(self, val):
@@ -34,17 +33,15 @@ class Node:
         else:
             # Check both sides, if they exist
             unival = True
-            if self.left is not None and (if (is_unival(self.left, val) is not True)):
+            if self.left is not None and (self.left.is_unival(val) is not True):
                 unival = False
-            if self.right is not None and (if (is_unival(self.right, val) is not True)):
+            if self.right is not None and (self.right.is_unival(val) is not True):
                 unival = False
             return unival
 
 
 def count_unival(node):
     count = 0
-    if node.is_leaf is True:
-        return 1
     if node.is_unival(node.val):
         count += 1
     if (node.left is not None):
@@ -52,3 +49,8 @@ def count_unival(node):
     if (node.right is not None):
         count += count_unival(node.right)
     return count
+
+
+node = Node('0', Node('1', None, None), Node(
+    '0', Node('1', Node('1', None, None), Node('1', None, None)), Node('0', None, None)))
+assert count_unival(node) == 5

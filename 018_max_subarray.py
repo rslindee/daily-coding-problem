@@ -11,8 +11,8 @@ Do this in O(n) time and O(k) space. You can modify the input array in-place and
 
 def max_subarray(array, k):
     sub_array = []
-    for x in range(len(array)-(k-1)):
-        sub_array.append(max(array[x:x+k]))
+    for idx,val in enumerate(array[:-(k-1)]):
+        sub_array.append(max(array[idx:idx+k]))
     return sub_array
 
 assert max_subarray([10, 5, 2, 7, 8, 7], 3) == [10, 7, 8, 8]

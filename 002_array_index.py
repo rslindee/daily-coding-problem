@@ -6,6 +6,7 @@ Follow-up: what if you can't use division?
 # Needed only for python 3
 from functools import reduce
 
+
 def modify_array(vals):
     modified_list = []
     for val in vals:
@@ -22,6 +23,6 @@ def modify_array_no_div(vals):
         modified_list.append(reduce(lambda x, y: x * y, vals) / val)
     return modified_list
 
+
 assert modify_array_no_div([1, 2, 3, 4, 5]) == [120, 60, 40, 30, 24]
 assert modify_array_no_div([3, 2, 1]) == [2, 3, 6]
-

@@ -11,6 +11,7 @@ What if, instead of being able to climb 1 or 2 steps at a time, you could climb 
 
 """
 
+
 def staircase(n, step_sizes):
     count = 0
     if n == 0:
